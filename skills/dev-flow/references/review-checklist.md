@@ -42,6 +42,7 @@ Primeiro passo, sempre: `npx turbo run lint -- --fix` (ou o lint do projeto com 
 - `npx turbo run build` passa.
 - Nenhum script "fantasma", isto é, declarado no `turbo.json`/`package.json` sem implementação: `grep` pelo nome do script nos pacotes.
 - Arquivos de config novos são cobertos (ou excluídos de propósito) no lint e na cobertura.
+- Workflow de CI validado com `actionlint` e simulado num clone limpo, com banco vazio e migrations do zero mais checagem de drift (`prisma migrate diff --exit-code`).
 
 ## 8. Docker e infraestrutura
 - Dockerfile usa `npm ci` (nunca `npm install`) e copia o `package.json` de **todos** os workspaces antes de instalar.

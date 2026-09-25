@@ -23,7 +23,11 @@
   - Usar `migrate dev --create-only` e editar o SQL: coluna nullable → `UPDATE` de backfill → `SET NOT NULL`.
 
 ## Next.js
-- `poweredByHeader: false` pode não remover `X-Powered-By` das páginas renderizadas (Next 16). O risco é mínimo; registrar como limitação conhecida.
+- **A imagem Docker do Next precisa do `next.config.*`.**
+  - O `headers()` é gravado no build, mas opções de runtime como `poweredByHeader: false` são lidas quando o `next start` sobe.
+  - Sem o arquivo na imagem, o servidor usa os padrões: o `X-Powered-By` volta e parece bug do framework, mas não é.
+- **Clone limpo sem os tipos de rota:** `tsc` falha antes do primeiro `next build`/`dev`, porque faltam `.next/types` e `next-env.d.ts`. O script de type-check deve ser `next typegen && tsc --noEmit`.
+- **Simular o CI num clone limpo** (`git clone` do repo local + `npm ci` + os mesmos comandos do workflow) antes de confiar nele. Pega arquivo gerado que só existe na máquina de quem desenvolve.
 - Código que precisa rodar antes do app no cliente (ex.: `z.config({ jitless: true })`) vai em `instrumentation-client.ts`. No provider é tarde demais.
 - Rotas públicas precisam ser liberadas no middleware/proxy de sessão (lista explícita), com teste logado e deslogado.
 
@@ -40,6 +44,7 @@
 - Um script de edição com vários passos que aborta no meio deixa o primeiro arquivo alterado. Conferir o estado antes de reexecutar.
 
 ## Verificação
+- Testes com user-event passam sozinhos e estouram o timeout quando o turbo roda todos os pacotes em paralelo (e em runners pequenos de CI). Dar folga: `testTimeout` de ~20s e `configure({ asyncUtilTimeout: 5000 })` no setup. Confirmar rodando `turbo run test --force` algumas vezes seguidas.
 - Navegar para a mesma URL mudando só o `#hash` não dispara `load`. Mudar a query.
 - `Input.insertText` num grupo de caixas de dígito insere tudo na primeira caixa. Digitar caractere a caractere.
 - Script ao vivo que falha no meio precisa apagar a conta descartável no `finally`. Se sobrar alguma, apagar pelo e-mail exato no banco.
