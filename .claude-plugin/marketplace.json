@@ -1,0 +1,26 @@
+{
+  "name": "chenoli",
+  "owner": {
+    "name": "Carlos Henrique de Oliveira",
+    "url": "https://github.com/chenoli"
+  },
+  "description": "Plugins do Carlos para Claude Code.",
+  "plugins": [
+    {
+      "name": "dev-flow",
+      "source": "./",
+      "displayName": "Dev Flow",
+      "description": "Desenvolvimento em fases com portões de qualidade: onboarding do projeto, /feature a partir de descrição ou card (Jira/Linear/GitHub), revisão em 10 camadas, verificação real no navegador e um commit por fase.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Carlos Henrique de Oliveira",
+        "url": "https://github.com/chenoli"
+      },
+      "homepage": "https://github.com/chenoli/dev-flow#readme",
+      "repository": "https://github.com/chenoli/dev-flow",
+      "license": "MIT",
+      "category": "development",
+      "keywords": ["workflow", "code-review", "monorepo", "nextjs", "nestjs", "jira", "quality-gates"]
+    }
+  ]
+}

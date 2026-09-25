@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "dev-flow",
+  "displayName": "Dev Flow",
+  "version": "1.0.0",
+  "description": "Desenvolvimento em fases com portões de qualidade. Onboarding que registra design system, formato do repo, estética de código e padrão de commit; /feature a partir de descrição ou card de Jira/Linear/GitHub; revisão em 10 camadas com eslint --fix; verificação real no navegador; um commit por fase e parada obrigatória entre fases.",
+  "author": {
+    "name": "Carlos Henrique de Oliveira",
+    "url": "https://github.com/chenoli"
+  },
+  "homepage": "https://github.com/chenoli/dev-flow#readme",
+  "repository": "https://github.com/chenoli/dev-flow",
+  "license": "MIT",
+  "keywords": ["workflow", "code-review", "monorepo", "nextjs", "nestjs", "jira", "quality-gates"]
+}
