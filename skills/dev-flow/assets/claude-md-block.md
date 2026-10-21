@@ -12,7 +12,7 @@ Um "sim" sobre o roadmap geral não é cheque em branco. Se a sessão for interr
 ## 2. Commits
 - Padrão: {{PADRAO_COMMIT}}
 - Granularidade: {{GRANULARIDADE}}
-- Idioma das mensagens: {{IDIOMA_COMMIT}}
+- Idioma das mensagens: inglês (sempre)
 - Branches: {{ESTRATEGIA_BRANCH}}
 - Nunca push, PR, `--amend` ou `--no-verify` sem pedido explícito.
 
@@ -25,7 +25,7 @@ Rodar `{{COMANDO_LINT_FIX}}` como parte da revisão. A fase fecha com zero warni
 - Formato do repo: {{FORMATO_REPO}}
 - Stack: {{STACK}}
 - Design system: {{DESIGN_SYSTEM}}. Specs e tokens em `refs/design/`. Ler a spec antes de construir cada tela.
-- Idiomas: conversa/UI/commits em {{IDIOMA_PRINCIPAL}}; comentários de código em {{IDIOMA_COMENTARIOS}}; i18n da UI: {{I18N}}.
+- Idiomas: código, variáveis, comentários e commits em **inglês**; a conversa pode ser em português; pt-BR só na UI, via i18n, junto com en-US ({{I18N}}).
 
 ## 5. Convenções de código
 - Nomes de arquivo: {{NOMES_ARQUIVO}}

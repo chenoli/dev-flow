@@ -9,7 +9,7 @@ O bloco dev-flow do `CLAUDE.md` guarda as escolhas feitas no onboarding. Este ar
 
 ## Comentários
 - Só quando **extremamente** importantes: uma restrição escondida, um workaround, um "porquê" não óbvio. Nunca repetir o que o código já diz.
-- Sempre em **inglês**, mesmo quando o resto do projeto é em português.
+- Sempre em **inglês**, sem exceção.
 - Comentários desnecessários que já existem são apagados, não mantidos.
 - Bons exemplos:
   - `// Looked up regardless of revocation, so a replayed token is recognized.`
@@ -47,9 +47,10 @@ Para usar os assets: copiar `assets/eslint/` para `packages/config/eslint/`, tro
 - Textos de UI só em `messages/*.json`, com os idiomas sempre em paridade. Links no meio do texto via `t.rich`, com tags.
 - A UI traduz status HTTP conhecidos (401, 429) em mensagens próprias. Não despejar a mensagem crua da API.
 
-## Idioma dos artefatos (padrão recomendado)
-- Conversa, commits, UI e documentos em `refs/`: português.
-- Comentários de código, mensagens de erro internas e nomes no código: inglês.
+## Idioma dos artefatos (regra fixa)
+- **Inglês**: código (nomes de variáveis, funções, arquivos), comentários, mensagens de erro internas, **mensagens de commit** e descrições de PR.
+- **pt-BR** só como idioma da UI, via i18n, sempre ao lado do en-US (mensagens em paridade).
+- A conversa com o Claude pode ser em português. Documentos de apoio em `refs/` seguem o idioma da conversa.
 
 ## Commits
 - Um por fase. Título curto no padrão escolhido; corpo em tópicos explicando o quê e o porquê; limitações aceitas registradas.

@@ -10,7 +10,7 @@ Levantar o que já existe, para não perguntar o que dá para ver:
 - Manifestos: `package.json` (workspaces?), `turbo.json`, `nx.json`, `pnpm-workspace.yaml`, `docker-compose*.yml`, `Dockerfile`s.
 - Configs de estilo existentes: `.prettierrc*`, `eslint.config.*`, `.oxlintrc.json`, `.editorconfig`, `biome.json`.
 - `CLAUDE.md`/`AGENTS.md` já existentes (preservar o conteúdo, só acrescentar o bloco do dev-flow).
-- Últimos commits, para inferir o padrão (Conventional Commits? idioma?).
+- Últimos commits, para inferir o padrão (Conventional Commits?). O idioma não é inferido: commits são sempre em inglês.
 
 Com isso, cada pergunta abaixo já vem com a opção detectada marcada como "(detectado)" e colocada em primeiro lugar.
 
@@ -31,12 +31,11 @@ Usar a ferramenta `AskUserQuestion`, com no máximo 4 perguntas por chamada, em 
 3. **Stack**
    - Opções: "Stack padrão do dev-flow (Next.js + NestJS + Prisma + Postgres...)" (Recomendado) / "Manter a stack detectada" / "Outra (descrever)".
    - A stack padrão está em `stack-defaults.md`.
-4. **Idiomas**
-   - Opções:
-     - "Conversa, commits e UI em pt-BR; comentários de código em inglês" (Recomendado)
-     - "Tudo em inglês"
-     - "Tudo em pt-BR"
-   - Perguntar à parte se a UI é multi-idioma (i18n).
+4. **Idiomas (regra fixa, não perguntar)**
+   - Código (nomes, variáveis, arquivos), comentários, mensagens de erro internas e **commits: sempre em inglês**.
+   - A conversa com o Claude pode ser em português.
+   - Português (pt-BR) só aparece como idioma da UI, via i18n, ao lado do inglês (en-US). Perguntar apenas se a UI precisa de outros idiomas além de pt-BR e en-US.
+   - Se o projeto já tiver comentários ou commits em outro idioma, propor uma fase para migrar os comentários. O histórico de commits não é reescrito.
 
 ### Rodada 2: estética de código
 
