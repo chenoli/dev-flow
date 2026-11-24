@@ -10,8 +10,8 @@
       "name": "dev-flow",
       "source": "./",
       "displayName": "Dev Flow",
-      "description": "Desenvolvimento em fases com portões de qualidade: onboarding do projeto, /feature a partir de descrição ou card (Jira/Linear/GitHub), revisão em 10 camadas, verificação real no navegador e um commit por fase.",
-      "version": "1.0.0",
+      "description": "Desenvolvimento em fases com portões de qualidade: onboarding do projeto, /planning em alto nível, /feature a partir de descrição ou card (Jira/Linear/GitHub), revisão em 10 camadas, verificação real no navegador e um commit por fase.",
+      "version": "1.1.0",
       "author": {
         "name": "Carlos Henrique de Oliveira",
         "url": "https://github.com/chenoli"

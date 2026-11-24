@@ -8,6 +8,7 @@ Plugin para [Claude Code](https://claude.com/claude-code) que transforma pedidos
 |---|---|
 | Skill `dev-flow` | Regras de trabalho, fluxo de fases, revisão em 10 camadas, stack padrão, convenções, segurança, testes, SEO/a11y, integrações e conformidade, pegadinhas conhecidas |
 | `/dev-flow:onboarding` | Perguntas iniciais: design system, formato do repo, stack, estética de código, padrão de commit e idiomas, tracker de tarefas. Cria `refs/` (fora do git) e o bloco de regras no `CLAUDE.md` |
+| `/dev-flow:planning <descrição ou card>` | Planejamento em alto nível, sem código: escopo, abordagem com alternativa descartada, riscos e fases com aceite verificável. O plano fica em `refs/features/` para o `/feature` executar |
 | `/dev-flow:feature <descrição ou card>` | Da descrição ou do card (Jira, Linear, GitHub) ao plano em fases, e execução fase a fase com verificação, revisão e commit |
 | `/dev-flow:review` | Revisão em 10 camadas das mudanças atuais, com `lint --fix` e checagens reais |
 | `/dev-flow:checkpoint` | Fecha a fase: verifica, revisa, atualiza o plano, commita e para |
@@ -37,8 +38,9 @@ Para testar localmente antes de publicar, a partir de uma cópia do repositório
 ## Uso
 
 1. Num projeto novo ou existente: `/dev-flow:onboarding`.
-2. Para cada funcionalidade: `/dev-flow:feature Criar tela de histórico com filtro por status` ou `/dev-flow:feature PROJ-123`.
-3. O Claude planeja, pede aprovação, executa **uma** fase, verifica, revisa, commita e **para**. Você responde "sim" para seguir.
+2. Para planejar antes de executar (opcional): `/dev-flow:planning Criar tela de histórico com filtro por status`.
+3. Para cada funcionalidade: `/dev-flow:feature Criar tela de histórico com filtro por status` ou `/dev-flow:feature PROJ-123`.
+4. O Claude planeja (ou usa o plano do `/planning`), pede aprovação, executa **uma** fase, verifica, revisa, commita e **para**. Você responde "sim" para seguir.
 
 ## Conectar o Jira (ou outro tracker)
 
@@ -65,7 +67,7 @@ Depois rode `/mcp` no Claude Code para autenticar. Para GitHub Issues, a CLI `gh
 
 ```
 .claude-plugin/        marketplace.json + plugin.json
-commands/              onboarding, feature, review, checkpoint
+commands/              onboarding, planning, feature, review, checkpoint
 skills/dev-flow/
 ├── SKILL.md           regras e índice (sempre carregado quando a skill ativa)
 ├── references/        detalhes lidos sob demanda

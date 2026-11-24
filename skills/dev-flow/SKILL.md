@@ -41,6 +41,7 @@ Detalhes de cada etapa, formato do relatório e do plano estão em `references/w
 | Comando | Uso |
 |---|---|
 | `/dev-flow:onboarding` | Perguntas iniciais. Cria `refs/`, o `.gitignore` e o bloco de regras no `CLAUDE.md`. |
+| `/dev-flow:planning <descrição ou card>` | Planejamento em alto nível (escopo, abordagem, riscos, fases com aceite), sem código. Grava o plano em `refs/features/`. |
 | `/dev-flow:feature <descrição ou card>` | Da ideia ou card (Jira, Linear, GitHub) ao plano em fases, e execução fase a fase. |
 | `/dev-flow:review` | Revisão em 10 camadas das mudanças atuais, corrigindo o que for de baixo risco. |
 | `/dev-flow:checkpoint` | Fecha a fase atual: verificação, revisão, plano, commit e parada. |

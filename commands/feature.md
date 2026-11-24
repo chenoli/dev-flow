@@ -21,6 +21,7 @@ Se `$ARGUMENTS` estiver vazio, peça a descrição ou a chave do card e pare.
 - Pergunte só o que for decisão genuína do usuário (regra de negócio, trade-off). Para o resto, adote o padrão sensato e anuncie a escolha.
 
 ## 3. Planejar e pedir aprovação
+- Se já existir `refs/features/<CHAVE-ou-slug>.md` (feito pelo `/dev-flow:planning`), use-o: confira se ainda bate com o código e o card, ajuste o que mudou e pule para a aprovação.
 - Crie `refs/features/<CHAVE-ou-slug>.md` a partir de `assets/feature-plan.md`, com:
   - entendimento;
   - critérios de aceite;
